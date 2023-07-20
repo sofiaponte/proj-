@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     
-    @State private var name = ""
+    @State static var name = ""
   
    @State private var textTitle = "Welcome to Track-itt! What's your name?"
     
@@ -39,7 +39,7 @@ struct ContentView: View {
                 
                 
                 
-                TextField("My name is...", text: $name)
+                TextField("My name is...", text: ContentView.$name)
                     
                    
                  
@@ -50,7 +50,7 @@ struct ContentView: View {
                  
           
                 Button("Submit Name") {
-                                textTitle = "Welcome, \(name)!"
+                    textTitle = "Welcome, \(ContentView.name)!"
                 }
                 .padding(.bottom, 100.0)
                 .font(.title2)
